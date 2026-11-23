@@ -1,0 +1,152 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum VillageNameType {
+  ALTERNATIVE
+  TRANSLITERATION
+  FORMER
+  HISTORICAL
+}
+
+model Village {
+  id                       Int      @id @default(autoincrement())
+  arabicName               String
+  englishName              String?
+  nameOrigin               String?
+  nameOriginSource         String?
+  governorate              String
+  localCouncil             String?
+  municipalityRelationship String?
+  latitude                 Float?
+  longitude                Float?
+
+  locationDescription      String?
+  nearbyPlaces             Json?
+  elevationMeters          Float?
+  landAreaKm2              Float?
+  historicalOverview       String?
+  historySource            String?
+  version                  Int @default(1)
+  status                   ReviewStatus @default(DRAFT)
+  verifiedBy               Int?
+  verifiedAt               DateTime?
+  populationRecords        PopulationRecord[]
+  entries                  KnowledgeEntry[]
+  aliases                  VillageName[]
+
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
+
+  @@index([governorate])
+  @@index([arabicName])
+  @@index([englishName])
+  @@index([arabicName(ops: raw("gin_trgm_ops"))], type: Gin, map: "village_arabic_trgm")
+  @@index([englishName(ops: raw("gin_trgm_ops"))], type: Gin, map: "village_english_trgm")
+}
+
+model VillageName {
+  id        Int             @id @default(autoincrement())
+  villageId Int
+  value     String
+  type      VillageNameType
+  source    String?
+
+  village Village @relation(fields: [villageId], references: [id], onDelete: Cascade)
+
+  @@unique([villageId, value, type])
+  @@index([villageId])
+  @@index([value(ops: raw("gin_trgm_ops"))], type: Gin, map: "alias_value_trgm")
+}
+
+enum Role {
+  READER
+  EDITOR
+  VERIFIER
+  ADMIN
+}
+enum ReviewStatus {
+  DRAFT
+  VERIFIED
+}
+enum EntryKind {
+  EVENT
+  LANDMARK
+  HERITAGE
+  ECONOMY
+  FACILITY
+}
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  passwordHash String
+  role Role @default(READER)
+  createdAt DateTime @default(now())
+  sessions Session[]
+  auditLogs AuditLog[]
+}
+model Session {
+  tokenHash String @id
+  userId Int
+  expiresAt DateTime
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([expiresAt])
+  @@index([userId])
+}
+model PopulationRecord {
+  id Int @id @default(autoincrement())
+  villageId Int
+  year Int
+  population Int
+  source String
+  notes String?
+  version Int @default(1)
+  status ReviewStatus @default(DRAFT)
+  verifiedBy Int?
+  verifiedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  village Village @relation(fields: [villageId], references: [id], onDelete: Cascade)
+  @@unique([villageId, year, source])
+  @@index([villageId, year])
+}
+model KnowledgeEntry {
+  id Int @id @default(autoincrement())
+  villageId Int
+  kind EntryKind
+  title String
+  description String
+  source String
+  category String?
+  year Int?
+  latitude Float?
+  longitude Float?
+  version Int @default(1)
+  status ReviewStatus @default(DRAFT)
+  verifiedBy Int?
+  verifiedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  village Village @relation(fields: [villageId], references: [id], onDelete: Cascade)
+  @@index([villageId, kind, id])
+}
+model AuditLog {
+  id Int @id @default(autoincrement())
+  actorId Int
+  action String
+  entity String
+  entityId Int
+  villageId Int?
+  before Json?
+  after Json?
+  createdAt DateTime @default(now())
+  actor User @relation(fields: [actorId], references: [id])
+  @@index([villageId, id])
+  @@index([entity, entityId])
+}

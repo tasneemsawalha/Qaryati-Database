@@ -1,0 +1,5 @@
+# Temporary external-provider outage check. Use only with compose run --no-deps.
+services:
+  api:
+    extra_hosts:
+      - "geocoding-api.open-meteo.com:127.0.0.1"

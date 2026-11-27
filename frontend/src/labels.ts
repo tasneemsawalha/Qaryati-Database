@@ -48,6 +48,8 @@ export const ENTITY_LABEL: Record<string, string> = {
   Village: 'القرية',
   PopulationRecord: 'سجل سكان',
   KnowledgeEntry: 'مدخل معرفي',
+  population: 'سجل سكان',
+  entries: 'مدخل معرفي',
   User: 'مستخدم',
 };
 

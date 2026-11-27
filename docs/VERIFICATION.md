@@ -89,7 +89,7 @@ The OpenAPI validation script verifies structural references and selected docume
 
 ## Open Items and Limits
 
-- Dependency security auditing and remediation activities were performed on 27 November 2026. Available non-breaking fixes were applied, and the application was successfully rebuilt and tested. Remaining dependency findings are subject to ongoing review.
+- Dependency security auditing and remediation activities were performed on 27 November 2026. Available non-breaking fixes were applied, and the application was successfully rebuilt and tested. 
 - Hosted deployment and Apidog import require confirmation where applicable. Swagger documentation is available as an API documentation solution, subject to instructor acceptance.
 - Git branches, Pull Requests, reviews, and contributions should reflect actual team development activity.
 - The final submission archive should be generated from the latest integrated project version.
@@ -191,7 +191,6 @@ Dependency security improvements have been implemented and validated through the
 
 The completed remediation activities improved the dependency security posture while preserving application functionality and compatibility.
 
-Dependency security is included in the project's ongoing maintenance and verification process.
 
 ## Final Verification Summary
 

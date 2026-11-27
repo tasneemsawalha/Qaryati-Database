@@ -102,7 +102,8 @@ export default function PopulationSection({ villageId }: { villageId: number }) 
                 <td>
                   <StatusBadge status={r.status} />
                 </td>
-                <td className="row-actions">
+                <td>
+                  <div className="row-actions">
                   {can('EDITOR', 'ADMIN') && (
                     <button className="link" onClick={() => setEditing(r)}>
                       تعديل
@@ -135,6 +136,7 @@ export default function PopulationSection({ villageId }: { villageId: number }) 
                       حذف
                     </button>
                   )}
+                </div>
                 </td>
               </tr>
             ))}

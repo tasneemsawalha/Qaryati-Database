@@ -1,0 +1,83 @@
+import { GeocodingService, OpenMeteoProvider } from './geocoding.service';
+describe('provider isolation and resilience', () => {
+  afterEach(() => jest.restoreAllMocks());
+  it.each(['Open-Meteo / GeoNames', 'Alternative test provider'])(
+    'preserves provider attribution for fresh and cached results: %s',
+    async (attribution) => {
+      const provider = {
+        attribution,
+        search: jest
+          .fn()
+          .mockResolvedValue([{ name: 'Test', latitude: 32, longitude: 35 }]),
+      };
+      const service = new GeocodingService(provider);
+      const fresh = await service.search('Test');
+      const cached = await service.search('TEST');
+      expect(fresh.meta).toMatchObject({ attribution, cached: false });
+      expect(cached.meta).toMatchObject({ attribution, cached: true });
+      expect(cached.data).toEqual(fresh.data);
+      expect(provider.search).toHaveBeenCalledTimes(1);
+    },
+  );
+  it('declares the actual Open-Meteo source', () => {
+    expect(new OpenMeteoProvider().attribution).toBe('Open-Meteo / GeoNames');
+  });
+  it('uses cache and combines concurrent identical requests', async () => {
+    const provider = {
+      attribution: 'Test provider',
+      search: jest
+        .fn()
+        .mockResolvedValue([{ name: 'Test', latitude: 32, longitude: 35 }]),
+    };
+    const service = new GeocodingService(provider);
+    await Promise.all([service.search('Test'), service.search('Test')]);
+    expect((await service.search('TEST')).meta.cached).toBe(true);
+    expect(provider.search).toHaveBeenCalledTimes(1);
+  });
+  it('limits different uncached requests', async () => {
+    const service = new GeocodingService({
+      attribution: 'Test provider',
+      search: jest.fn().mockResolvedValue([]),
+    });
+    await service.search('one');
+    await expect(service.search('two')).rejects.toThrow('busy');
+  });
+  it('retries transient network failure once', async () => {
+    const fetcher = jest
+      .spyOn(globalThis, 'fetch')
+      .mockRejectedValueOnce(new Error('network'))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ results: [] })));
+    expect(await new OpenMeteoProvider().search('test')).toEqual([]);
+    expect(fetcher).toHaveBeenCalledTimes(2);
+  });
+  it('does not retry provider rate limits', async () => {
+    const fetcher = jest
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValue(new Response('', { status: 429 }));
+    await expect(new OpenMeteoProvider().search('test')).rejects.toThrow(
+      'rate limit',
+    );
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+  it('maps repeated timeout to unavailable', async () => {
+    const fetcher = jest
+      .spyOn(globalThis, 'fetch')
+      .mockRejectedValue(new DOMException('timed out', 'TimeoutError'));
+    await expect(new OpenMeteoProvider().search('test')).rejects.toThrow(
+      'timed out',
+    );
+    expect(fetcher).toHaveBeenCalledTimes(2);
+  });
+  it('rejects invalid provider coordinates', async () => {
+    jest.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          results: [{ name: 'bad', latitude: 999, longitude: 0 }],
+        }),
+      ),
+    );
+    await expect(new OpenMeteoProvider().search('test')).rejects.toThrow(
+      'coordinates',
+    );
+  });
+});

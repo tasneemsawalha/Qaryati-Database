@@ -80,4 +80,75 @@ describe('provider isolation and resilience', () => {
       'coordinates',
     );
   });
+  it('respects Retry-After after a 429 response', async () => {
+  const fetcher = jest
+    .spyOn(globalThis, 'fetch')
+    .mockResolvedValueOnce(
+      new Response('', {
+        status: 429,
+        headers: { 'Retry-After': '60' },
+      }),
+    );
+
+  const provider = new OpenMeteoProvider();
+
+  await expect(provider.search('Nablus')).rejects.toThrow(
+    'rate limit',
+  );
+
+  await expect(provider.search('Jenin')).rejects.toThrow(
+    'rate limit',
+  );
+
+  expect(fetcher).toHaveBeenCalledTimes(1);
+});
+
+it('retries a temporary server failure once', async () => {
+  const fetcher = jest
+    .spyOn(globalThis, 'fetch')
+    .mockResolvedValueOnce(
+      new Response('', { status: 503 }),
+    )
+    .mockResolvedValueOnce(
+      new Response(JSON.stringify({ results: [] })),
+    );
+
+  const provider = new OpenMeteoProvider();
+
+  expect(await provider.search('Nablus')).toEqual([]);
+  expect(fetcher).toHaveBeenCalledTimes(2);
+});
+
+it('does not retry permanent client errors', async () => {
+  const fetcher = jest
+    .spyOn(globalThis, 'fetch')
+    .mockResolvedValue(
+      new Response('', { status: 400 }),
+    );
+
+  await expect(
+    new OpenMeteoProvider().search('Nablus'),
+  ).rejects.toThrow('unavailable');
+
+  expect(fetcher).toHaveBeenCalledTimes(1);
+});
+
+it('spaces outgoing provider attempts by at least one second', async () => {
+  const starts: number[] = [];
+
+  jest.spyOn(globalThis, 'fetch').mockImplementation(async () => {
+    starts.push(Date.now());
+
+    if (starts.length === 1) {
+      return new Response('', { status: 503 });
+    }
+
+    return new Response(JSON.stringify({ results: [] }));
+  });
+
+  await new OpenMeteoProvider().search('Nablus');
+
+  expect(starts).toHaveLength(2);
+  expect(starts[1] - starts[0]).toBeGreaterThanOrEqual(1000);
+});
 });

@@ -1,0 +1,23 @@
+services:
+  postgres-test:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: qaryati
+      POSTGRES_PASSWORD: isolated-test-only-password
+      POSTGRES_DB: qaryati_test
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qaryati -d qaryati_test"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+  tests:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://qaryati:isolated-test-only-password@postgres-test:5432/qaryati_test
+      TEST_DATABASE_URL: postgresql://qaryati:isolated-test-only-password@postgres-test:5432/qaryati_test
+    command: ["sh", "-c", "npm run db:migrate && npm test -- --runInBand && npm run test:integration"]
+    depends_on:
+      postgres-test:
+        condition: service_healthy

@@ -1,0 +1,138 @@
+{
+  "read_before": {
+    "runs": [
+      {
+        "round": 1,
+        "avg_ms": 169.978582352941,
+        "p95_ms": 232.80326999999997,
+        "requests_per_second": 36.81457825799912,
+        "error_rate": 0,
+        "requests": 374
+      },
+      {
+        "round": 2,
+        "avg_ms": 132.5176302325581,
+        "p95_ms": 187.52595999999997,
+        "requests_per_second": 42.269453235480405,
+        "error_rate": 0,
+        "requests": 430
+      },
+      {
+        "round": 3,
+        "avg_ms": 141.35085755395667,
+        "p95_ms": 188.37178,
+        "requests_per_second": 41.08048735368229,
+        "error_rate": 0,
+        "requests": 417
+      }
+    ],
+    "median": {
+      "avg_ms": 141.35085755395667,
+      "p95_ms": 188.37178,
+      "requests_per_second": 41.08048735368229,
+      "error_rate": 0
+    }
+  },
+  "read_after": {
+    "runs": [
+      {
+        "round": 1,
+        "avg_ms": 16.260890823529422,
+        "p95_ms": 33.36498999999998,
+        "requests_per_second": 84.08894172444417,
+        "error_rate": 0,
+        "requests": 850
+      },
+      {
+        "round": 2,
+        "avg_ms": 18.757361071428573,
+        "p95_ms": 32.86847999999999,
+        "requests_per_second": 83.12105880633825,
+        "error_rate": 0,
+        "requests": 840
+      },
+      {
+        "round": 3,
+        "avg_ms": 18.996236363636342,
+        "p95_ms": 39.230374999999995,
+        "requests_per_second": 82.91399777318391,
+        "error_rate": 0,
+        "requests": 836
+      }
+    ],
+    "median": {
+      "avg_ms": 18.757361071428573,
+      "p95_ms": 33.36498999999998,
+      "requests_per_second": 83.12105880633825,
+      "error_rate": 0
+    }
+  },
+  "write_before": {
+    "runs": [
+      {
+        "round": 1,
+        "avg_ms": 16.110927741083202,
+        "p95_ms": 34.231159999999996,
+        "requests_per_second": 74.2697327959462,
+        "error_rate": 0,
+        "requests": 757
+      },
+      {
+        "round": 2,
+        "avg_ms": 10.414776350540201,
+        "p95_ms": 22.368859999999998,
+        "requests_per_second": 81.63416106419979,
+        "error_rate": 0,
+        "requests": 833
+      },
+      {
+        "round": 3,
+        "avg_ms": 11.489189565217393,
+        "p95_ms": 29.839899999999993,
+        "requests_per_second": 79.7655815399892,
+        "error_rate": 0,
+        "requests": 805
+      }
+    ],
+    "median": {
+      "avg_ms": 11.489189565217393,
+      "p95_ms": 29.839899999999993,
+      "requests_per_second": 79.7655815399892,
+      "error_rate": 0
+    }
+  },
+  "write_after": {
+    "runs": [
+      {
+        "round": 1,
+        "avg_ms": 14.94502145643692,
+        "p95_ms": 33.99491999999998,
+        "requests_per_second": 75.1213422146102,
+        "error_rate": 0,
+        "requests": 769
+      },
+      {
+        "round": 2,
+        "avg_ms": 13.267561480552086,
+        "p95_ms": 36.982519999999994,
+        "requests_per_second": 77.94941591485498,
+        "error_rate": 0,
+        "requests": 797
+      },
+      {
+        "round": 3,
+        "avg_ms": 11.350004773561807,
+        "p95_ms": 26.090439999999987,
+        "requests_per_second": 80.00422876697071,
+        "error_rate": 0,
+        "requests": 817
+      }
+    ],
+    "median": {
+      "avg_ms": 13.267561480552086,
+      "p95_ms": 33.99491999999998,
+      "requests_per_second": 77.94941591485498,
+      "error_rate": 0
+    }
+  }
+}

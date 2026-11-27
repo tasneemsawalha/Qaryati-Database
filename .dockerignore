@@ -4,9 +4,6 @@ dist
 .env.*
 !.env.example
 .git
-.agents
-.claude
-.windsurf
 coverage
 performance/results
 frontend

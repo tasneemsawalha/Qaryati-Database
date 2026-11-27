@@ -4,6 +4,21 @@ NestJS 12 / TypeScript / PostgreSQL 17 / Prisma 7. This continues the supplied v
 
 Guides: [Running and testing](docs/TESTING.md) | [Verification evidence](docs/VERIFICATION.md).
 
+## Screenshots (web UI)
+
+The optional React UI (Arabic, right-to-left) running against the real API and PostgreSQL, loaded with the sourced village data from [`seed/`](seed/README.md).
+
+| | |
+|---|---|
+| ![Home page with search and village cards](docs/screenshots/01-home.jpg) | ![Village page with identity, geography and sources](docs/screenshots/02-village.jpg) |
+| **Home:** search by Arabic, English or historical names, filter by governorate | **Village page:** identity, alternative names, geography and history, each with its source |
+| ![Historical events timeline](docs/screenshots/03-timeline.jpg) | ![Population history with two conflicting sources](docs/screenshots/04-population.jpg) |
+| **Timeline:** historical events ordered by year | **Population history:** two sources disagree for 1997; both records are kept |
+| ![Village form with a validation error](docs/screenshots/05-form.jpg) | ![Audit log with before and after snapshots](docs/screenshots/06-audit.jpg) |
+| **Editing:** validation errors from the API are shown to the user | **Audit log:** who changed what and when, with before/after snapshots |
+| ![Villages per governorate](docs/screenshots/07-stats.jpg) | ![Mobile layout](docs/screenshots/08-mobile.jpg) |
+| **Statistics:** villages per governorate (raw SQL endpoint) | **Mobile:** responsive layout |
+
 ## Quick start with Docker
 
 1. Copy `.env.example` to `.env`. Choose a long, URL-safe PostgreSQL password (or percent-encode it in a custom connection URL). Do not reuse production credentials.

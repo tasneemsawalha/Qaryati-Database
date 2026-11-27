@@ -87,15 +87,7 @@ The following improvements were implemented:
 
 The OpenAPI validation script verifies structural references and selected documentation contracts. Runtime endpoint behavior is verified separately through automated and manual testing.
 
-## Open Items and Limits
 
-- Dependency security auditing and remediation activities were performed on 27 November 2026. Available non-breaking fixes were applied, and the application was successfully rebuilt and tested. 
-- Hosted deployment and Apidog import require confirmation where applicable. Swagger documentation is available as an API documentation solution, subject to instructor acceptance.
-- Git branches, Pull Requests, reviews, and contributions should reflect actual team development activity.
-- The final submission archive should be generated from the latest integrated project version.
-- Sensitive configuration files, credentials, `node_modules`, and generated build artifacts must be excluded from the submission archive.
-- Automated and manual testing provide evidence for the tested functionality, but do not guarantee the absence of all software defects.
-- Final verification should be performed after the last application changes and branch integration.
 
 ## Documentation Inventory
 

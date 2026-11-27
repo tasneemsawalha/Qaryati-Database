@@ -39,7 +39,7 @@ export function describeEndpoint(method: string, path: string) {
     ],
     'get /geocoding': [
       'Find suggested geographic locations',
-      'Requires name (2–100 characters, with non-whitespace endpoints). Suggestions are not saved automatically. Responses include provider attribution and cached. Results are cached for 24 hours in this process. Concurrent identical requests are combined. External timeouts/transient failures get one retry; provider 429 is not retried. Unavailable/busy providers return 503.',
+      'Requires name (2–100 characters, with non-whitespace endpoints). Suggestions are not saved automatically. Responses include provider attribution and cached. Successful results are cached for 24 hours in this process, with a maximum of 500 entries. Concurrent identical requests are combined. External timeouts and transient failures get one retry. Outgoing provider attempts are separated by at least one second. Provider 429 is not retried and activates a cooldown based on Retry-After. Malformed provider responses are rejected without retrying. Unavailable/busy providers return 503.',
       'Public',
     ],
     'get /villages/stats/by-governorate': [

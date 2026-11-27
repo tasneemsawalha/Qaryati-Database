@@ -1,0 +1,146 @@
+[
+  {
+    "scenario": "read",
+    "stage": "before",
+    "runs": [
+      {
+        "file": "docker-read-before-1.json",
+        "avg_ms": 80.5056980915619,
+        "p95_ms": 111.7156568,
+        "throughput_rps": 55.011845606394296,
+        "error_rate": 0,
+        "check_failures": 0
+      },
+      {
+        "file": "docker-read-before-2.json",
+        "avg_ms": 79.25732833034115,
+        "p95_ms": 130.0056267999997,
+        "throughput_rps": 54.339577900199494,
+        "error_rate": 0,
+        "check_failures": 0
+      },
+      {
+        "file": "docker-read-before-3.json",
+        "avg_ms": 77.69083906725666,
+        "p95_ms": 114.1274966,
+        "throughput_rps": 55.77941654691394,
+        "error_rate": 0,
+        "check_failures": 0
+      }
+    ],
+    "median": {
+      "avg_ms": 79.25732833034115,
+      "p95_ms": 114.1274966,
+      "throughput_rps": 55.011845606394296,
+      "error_rate": 0
+    }
+  },
+  {
+    "scenario": "read",
+    "stage": "after",
+    "runs": [
+      {
+        "file": "docker-read-after-1.json",
+        "avg_ms": 19.54586007314151,
+        "p95_ms": 39.244056549999954,
+        "throughput_rps": 82.32393991218268,
+        "error_rate": 0,
+        "check_failures": 0
+      },
+      {
+        "file": "docker-read-after-2.json",
+        "avg_ms": 20.90018137333331,
+        "p95_ms": 43.32682059999997,
+        "throughput_rps": 81.7150315318923,
+        "error_rate": 0,
+        "check_failures": 0
+      },
+      {
+        "file": "docker-read-after-3.json",
+        "avg_ms": 18.408880514828013,
+        "p95_ms": 31.50773,
+        "throughput_rps": 83.2862386867261,
+        "error_rate": 0,
+        "check_failures": 0
+      }
+    ],
+    "median": {
+      "avg_ms": 19.54586007314151,
+      "p95_ms": 39.244056549999954,
+      "throughput_rps": 82.32393991218268,
+      "error_rate": 0
+    }
+  },
+  {
+    "scenario": "write",
+    "stage": "before",
+    "runs": [
+      {
+        "file": "docker-write-before-1.json",
+        "avg_ms": 19.267371922330103,
+        "p95_ms": 39.802165,
+        "throughput_rps": 71.6776026974557,
+        "error_rate": 0,
+        "check_failures": 0
+      },
+      {
+        "file": "docker-write-before-2.json",
+        "avg_ms": 19.456742456310668,
+        "p95_ms": 46.388772,
+        "throughput_rps": 71.41655895676054,
+        "error_rate": 0,
+        "check_failures": 0
+      },
+      {
+        "file": "docker-write-before-3.json",
+        "avg_ms": 16.75497135085415,
+        "p95_ms": 31.883106,
+        "throughput_rps": 74.40230799416514,
+        "error_rate": 0,
+        "check_failures": 0
+      }
+    ],
+    "median": {
+      "avg_ms": 19.267371922330103,
+      "p95_ms": 39.802165,
+      "throughput_rps": 71.6776026974557,
+      "error_rate": 0
+    }
+  },
+  {
+    "scenario": "write",
+    "stage": "after",
+    "runs": [
+      {
+        "file": "docker-write-after-1.json",
+        "avg_ms": 17.266296684210545,
+        "p95_ms": 36.600342,
+        "throughput_rps": 73.78715833503465,
+        "error_rate": 0,
+        "check_failures": 0
+      },
+      {
+        "file": "docker-write-after-2.json",
+        "avg_ms": 15.341535195058489,
+        "p95_ms": 33.25810679999999,
+        "throughput_rps": 74.91312962920703,
+        "error_rate": 0,
+        "check_failures": 0
+      },
+      {
+        "file": "docker-write-after-3.json",
+        "avg_ms": 15.720525328515116,
+        "p95_ms": 31.713994,
+        "throughput_rps": 75.57391479630346,
+        "error_rate": 0,
+        "check_failures": 0
+      }
+    ],
+    "median": {
+      "avg_ms": 15.720525328515116,
+      "p95_ms": 33.25810679999999,
+      "throughput_rps": 74.91312962920703,
+      "error_rate": 0
+    }
+  }
+]

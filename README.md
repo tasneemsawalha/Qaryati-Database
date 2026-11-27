@@ -8,16 +8,37 @@ Guides: [Running and testing](docs/TESTING.md) | [Verification evidence](docs/VE
 
 The optional React UI (Arabic, right-to-left) running against the real API and PostgreSQL, loaded with the sourced village data from [`seed/`](seed/README.md).
 
-| | |
-|---|---|
-| ![Home page with search and village cards](docs/screenshots/01-home.jpg) | ![Village page with identity, geography and sources](docs/screenshots/02-village.jpg) |
-| **Home:** search by Arabic, English or historical names, filter by governorate | **Village page:** identity, alternative names, geography and history, each with its source |
-| ![Historical events timeline](docs/screenshots/03-timeline.jpg) | ![Population history with two conflicting sources](docs/screenshots/04-population.jpg) |
-| **Timeline:** historical events ordered by year | **Population history:** two sources disagree for 1997; both records are kept |
-| ![Village form with a validation error](docs/screenshots/05-form.jpg) | ![Audit log with before and after snapshots](docs/screenshots/06-audit.jpg) |
-| **Editing:** validation errors from the API are shown to the user | **Audit log:** who changed what and when, with before/after snapshots |
-| ![Villages per governorate](docs/screenshots/07-stats.jpg) | ![Mobile layout](docs/screenshots/08-mobile.jpg) |
-| **Statistics:** villages per governorate (raw SQL endpoint) | **Mobile:** responsive layout |
+**Home: search by Arabic, English or historical names, filter by governorate**
+
+![Home: search by Arabic, English or historical names, filter by governorate](docs/screenshots/01-home.jpg)
+
+**Village page: identity, alternative names, geography and history, each with its source**
+
+![Village page: identity, alternative names, geography and history, each with its source](docs/screenshots/02-village.jpg)
+
+**Timeline: historical events ordered by year**
+
+![Timeline: historical events ordered by year](docs/screenshots/03-timeline.jpg)
+
+**Population history: two sources disagree for 1997, and both records are kept**
+
+![Population history: two sources disagree for 1997, and both records are kept](docs/screenshots/04-population.jpg)
+
+**Editing: validation errors from the API are shown to the user**
+
+![Editing: validation errors from the API are shown to the user](docs/screenshots/05-form.jpg)
+
+**Audit log: who changed what and when, with before/after snapshots**
+
+![Audit log: who changed what and when, with before/after snapshots](docs/screenshots/06-audit.jpg)
+
+**Statistics: villages per governorate (raw SQL endpoint)**
+
+![Statistics: villages per governorate (raw SQL endpoint)](docs/screenshots/07-stats.jpg)
+
+**Mobile: responsive layout**
+
+<img src="docs/screenshots/08-mobile.jpg" alt="Mobile layout" width="320">
 
 ## Quick start with Docker
 

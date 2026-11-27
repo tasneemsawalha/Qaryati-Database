@@ -58,7 +58,7 @@ export default function App() {
         </Routes>
       </main>
       <footer className="footer container">
-        قريتي — مشروع مساق هندسة البرمجيات المتقدمة · API: <code>/api/v1</code>
+        قريتي — ذاكرة القرى الفلسطينية، وكل معلومة بمصدرها
       </footer>
     </>
   );

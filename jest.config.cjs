@@ -1,0 +1,1 @@
+module.exports={rootDir:'.',moduleNameMapper:{'^(\\.{1,2}/.*)\\.js$':'$1'},testRegex:'.*\\.spec\\.ts$',testEnvironment:'node',setupFiles:['<rootDir>/test/setup-env.cjs'],transform:{'^.+\\.(t|j)s$':['ts-jest',{tsconfig:{isolatedModules:true}}]},collectCoverageFrom:['src/**/*.ts','!src/generated/**','!src/main.ts'],coverageDirectory:'coverage'};

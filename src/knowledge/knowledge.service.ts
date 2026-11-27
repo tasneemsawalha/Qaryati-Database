@@ -54,7 +54,10 @@ export class KnowledgeService {
         : await this.prisma.$transaction([
             this.prisma.knowledgeEntry.findMany({
               where: { villageId, ...(kind ? { kind } : {}) },
-              orderBy: { id: 'asc' },
+              orderBy:
+               kind === 'EVENT'
+                ? [{ year: 'asc' }, { id: 'asc' }]
+                : [{ id: 'asc' }],
               skip,
               take,
             }),

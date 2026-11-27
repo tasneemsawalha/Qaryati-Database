@@ -113,4 +113,32 @@ The following unit test suites were executed successfully:
 | Business Rules | 4 |
 | Total | 12 |
 
-Database and API integration testing is still required.
+## 9. Integration Testing Results
+
+Manual integration tests were performed using Swagger UI,
+PowerShell, Docker and PostgreSQL 17.
+
+| Test Case | Result |
+|---|---|
+| Database readiness | PASS |
+| Create historical overview | PASS |
+| Retrieve historical overview | PASS |
+| Create historical events | PASS |
+| Chronological event ordering | PASS |
+| Create and retrieve landmarks | PASS |
+| Create and retrieve cultural heritage | PASS |
+| Update historical event | PASS |
+| Update historical source | PASS |
+| Version increment after update | PASS |
+
+Historical events were inserted in the order 1967 and 1920.
+The API returned them chronologically: 1920 and 1967.
+
+Updating a historical event successfully changed its
+description and source, incremented its version from
+1 to 2, and preserved its original year.
+
+All 12 targeted unit tests passed.
+
+Integration testing was performed using the complete
+local application.

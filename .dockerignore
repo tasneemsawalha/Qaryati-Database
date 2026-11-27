@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+.git
+.agents
+.claude
+.windsurf
+coverage
+performance/results

@@ -18,6 +18,51 @@ export const GEOCODING_PROVIDER = 'GEOCODING_PROVIDER';
 @Injectable()
 export class OpenMeteoProvider implements GeocodingProvider {
   readonly attribution = 'Open-Meteo / GeoNames';
+  private blockedUntil = 0;
+private nextRequestAt = 0;
+
+private async waitForRequestSlot(): Promise<void> {
+  while (true) {
+    const now = Date.now();
+
+    if (now < this.blockedUntil) {
+      throw new ServiceUnavailableException(
+        'Geocoding provider rate limit reached; retry later',
+      );
+    }
+
+    const delay = this.nextRequestAt - now;
+
+    if (delay <= 0) {
+      this.nextRequestAt = now + 1000;
+      return;
+    }
+
+    await new Promise<void>((resolve) =>
+      setTimeout(resolve, delay),
+    );
+  }
+}
+
+private applyRetryAfter(value: string | null): void {
+  const now = Date.now();
+  let delay = 1000;
+
+  if (value && /^\d+$/.test(value.trim())) {
+    delay = Number(value) * 1000;
+  } else if (value) {
+    const date = Date.parse(value);
+
+    if (Number.isFinite(date)) {
+      delay = Math.max(0, date - now);
+    }
+  }
+
+  this.blockedUntil = Math.max(
+    this.blockedUntil,
+    now + Math.max(1000, delay),
+  );
+}
   async search(name: string): Promise<Place[]> {
     const url = new URL('https://geocoding-api.open-meteo.com/v1/search');
     url.search = new URLSearchParams({
@@ -28,15 +73,21 @@ export class OpenMeteoProvider implements GeocodingProvider {
     }).toString();
     for (let attempt = 0; attempt < 2; attempt++) {
       try {
+        await this.waitForRequestSlot();
         const response = await fetch(url, {
           signal: AbortSignal.timeout(
             Number(process.env.GEOCODING_TIMEOUT_MS || 2500),
           ),
         });
-        if (response.status === 429)
-          throw new ServiceUnavailableException(
-            'Geocoding provider rate limit reached',
-          );
+        if (response.status === 429) {
+         this.applyRetryAfter(
+          response.headers.get('Retry-After'),
+         );
+
+         throw new ServiceUnavailableException(
+          'Geocoding provider rate limit reached',
+         );
+        }
         if (response.status >= 500 && attempt === 0) {
           await new Promise((r) => setTimeout(r, 100));
           continue;
@@ -45,22 +96,49 @@ export class OpenMeteoProvider implements GeocodingProvider {
           throw new ServiceUnavailableException(
             'Geocoding provider unavailable',
           );
-        const data = (await response.json()) as {
-          results?: Array<{
-            name: string;
-            latitude: number;
-            longitude: number;
-            country?: string;
-            admin1?: string;
-          }>;
+        let data: {
+         results?: Array<{
+         name: string;
+         latitude: number;
+         longitude: number;
+         country?: string;
+         admin1?: string;
+         }>;
         };
-        if (!data || typeof data !== 'object')
+
+        try {
+         data = await response.json();
+        } catch (error) {
+          if (
+  error instanceof SyntaxError ||
+  (
+    typeof error === 'object' &&
+    error !== null &&
+    'name' in error &&
+    error.name === 'SyntaxError'
+  )
+) {
+           throw new ServiceUnavailableException(
+            'Invalid provider JSON response',
+           );
+          }
+
+           throw error;
+         }
+        if (
+  !data ||
+  typeof data !== 'object' ||
+  Array.isArray(data)
+)
           throw new ServiceUnavailableException('Invalid provider response');
         if (data.results !== undefined && !Array.isArray(data.results))
           throw new ServiceUnavailableException('Invalid provider response');
         return (data.results || []).map((p) => {
           if (
+            !p ||
+            typeof p !== 'object' ||
             typeof p.name !== 'string' ||
+            p.name.trim().length === 0 ||
             !Number.isFinite(p.latitude) ||
             Math.abs(p.latitude) > 90 ||
             !Number.isFinite(p.longitude) ||
@@ -103,8 +181,13 @@ export class GeocodingService {
   async search(name: string) {
     const key = name.trim().toLowerCase();
     const cached = this.cache.get(key);
-    if (cached && cached.expires > Date.now())
-      return this.result(cached.places, true);
+    if (cached) {
+  if (cached.expires > Date.now()) {
+    return this.result(cached.places, true);
+  }
+
+  this.cache.delete(key);
+}
     const existing = this.pending.get(key);
     if (existing) return this.result(await existing, false);
     if (Date.now() < this.nextRequest)

@@ -1,6 +1,6 @@
 # Qaryati — Palestinian Villages Knowledge API
 
-NestJS 12 / TypeScript / PostgreSQL 17 / Prisma 7. This continues the supplied village identity module. The project is API-only, as required by the course specification.
+NestJS 12 / TypeScript / PostgreSQL 17 / Prisma 7. This continues the supplied village identity module. The backend is the graded deliverable; an optional React UI lives in [`frontend/`](frontend/README.md).
 
 Guides: [Running and testing](docs/TESTING.md) | [Verification evidence](docs/VERIFICATION.md).
 
@@ -8,7 +8,7 @@ Guides: [Running and testing](docs/TESTING.md) | [Verification evidence](docs/VE
 
 1. Copy `.env.example` to `.env`. Choose a long, URL-safe PostgreSQL password (or percent-encode it in a custom connection URL). Do not reuse production credentials.
 2. Run `docker compose up --build -d`. The database health check gates migrations; migration success gates the API.
-3. Open http://localhost:3000/api-docs. Readiness is `/api/v1/health/ready`.
+3. Open http://localhost:3000/api-docs (API) or http://localhost:8080 (web UI). Readiness is `/api/v1/health/ready`.
 4. Bootstrap a new administrator once. Set `ADMIN_EMAIL` and `ADMIN_PASSWORD` in your terminal environment, then run:
 
 ```sh

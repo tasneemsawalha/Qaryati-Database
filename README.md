@@ -64,7 +64,3 @@ Unit tests and HTTP contract tests mock the database deliberately. Real transact
 The integration suite refuses to run without an explicitly named test database. CI provisions a disposable PostgreSQL service and performs these steps. See `performance/README.md` for the mandatory read/write load evaluation and honest before/after reporting workflow.
 
 To run both suites with isolated container infrastructure, use `docker compose -p qaryati-check -f docker-compose.test.yml up --build --abort-on-container-exit --exit-code-from tests`, then `docker compose -p qaryati-check -f docker-compose.test.yml down`. The test database uses temporary storage and exposes no host port. The fourth migration requires PostgreSQL's `pg_trgm` extension (included in the standard PostgreSQL image); on managed databases, arrange extension privileges before deployment.
-
-## Collaboration / submission
-
-The source archive cannot demonstrate team participation. Each member must use real feature branches, focused commits and reviewed pull requests. Do not invent past work or commit this archive as evidence of a semester-long workflow. `.github/pull_request_template.md` provides a review checklist. Explain the supplied code and decisions during the defense; replace synthetic data with referenced, verified village information.

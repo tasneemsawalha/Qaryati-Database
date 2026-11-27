@@ -135,7 +135,7 @@ Build result: Successful.
 
 Unit test result: 30 passed, 0 failed.
 
-Tests use mocked external responses and simulated time where appropriate. Live external API verification is pending.
+Tests use mocked external responses and simulated time where appropriate. Live external API verification and simulated outage testing were completed successfully, as documented in Section 14.
 
 ## 11. Improvements
 
@@ -160,3 +160,50 @@ A total of 21 additional unit tests were introduced.
 
 - Open-Meteo Geocoding API: https://open-meteo.com/en/docs/geocoding-api
 - Existing project architecture decision: `docs/adr/004-external-api.md`
+
+## 14. Final Verification Results
+
+Verification date: November 27, 2026.
+
+### Live External API Testing
+
+The updated application was successfully built and deployed in an isolated Docker environment.
+
+| Test | Observed result | Status |
+|---|---|---|
+| Nablus search | HTTP 200, cached: false | Passed |
+| Repeated Nablus search | HTTP 200, cached: true | Passed |
+| Jenin search | HTTP 200, geographic suggestions returned | Passed |
+| Swagger input validation | Invalid input rejected | Passed |
+| Backend input validation | HTTP 400 | Passed |
+| Unknown locality search | HTTP 200, empty results | Passed |
+
+### External Provider Outage Simulation
+
+A temporary Docker container was configured to resolve the external provider hostname to localhost, simulating provider unavailability.
+
+| Test | Observed result |
+|---|---|
+| Initial readiness check | HTTP 200 |
+| Geocoding during simulated outage | HTTP 503 |
+| Village listing during simulated outage | HTTP 200 |
+| Readiness after provider failure | HTTP 200 |
+
+The application remained operational, and database-backed village listing remained available during the simulated external provider failure.
+
+### Full Project Automated Testing
+
+- PostgreSQL version: 17.12.
+- Prisma Client version: 7.10.1.
+- Database migrations: 4 successfully applied.
+- Unit and HTTP tests: 102 passed.
+- PostgreSQL integration tests: 1 passed.
+- Total automated tests: 103 passed, 0 failed.
+- Total test suites: 16 passed.
+- Process exit code: 0.
+
+### Conclusion
+
+The tested implementation satisfies the external API integration requirements, including timeout handling, bounded retries, local rate control, caching, response validation, provider abstraction and failure isolation.
+
+The cache and rate-control state remain process-local. The outage test was simulated, and passing tests provide evidence for covered scenarios rather than a guarantee of defect-free operation. PostgreSQL client deprecation warnings remain for future maintenance.

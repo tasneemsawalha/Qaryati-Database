@@ -34,7 +34,7 @@ No immediate retry on HTTP 429 avoids amplifying provider rate pressure.
 
 The geocoding test suite passed all 30 unit tests, including 21 additional tests covering retry behaviour, response validation and caching.
 
-Live provider verification remains pending.
+Live provider verification and simulated outage testing passed. The full project automated test run passed all 103 tests.
 
 ## References
 

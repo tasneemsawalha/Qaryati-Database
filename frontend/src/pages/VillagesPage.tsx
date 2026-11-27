@@ -110,7 +110,7 @@ export default function VillagesPage() {
               محافظة {v.governorate}
               {v.localCouncil && ` · ${v.localCouncil}`}
             </p>
-            {v.aliases.length > 0 && (
+            {v.aliases?.length > 0 && (
               <p className="aliases">
                 يُعرف أيضاً: {v.aliases.map((a) => a.value).join('، ')}
               </p>

@@ -63,7 +63,11 @@ export default function VillagePage() {
             <button
               disabled={action.busy}
               onClick={() =>
-                action.run(async () => setVillage(await villages.verify(v.id, v.version)))
+                action.run(async () => {
+                  // The verify response omits relations (aliases), so reload the full record.
+                  await villages.verify(v.id, v.version);
+                  setVillage(await villages.get(v.id));
+                })
               }
             >
               توثيق
@@ -143,11 +147,11 @@ function Overview({ v }: { v: Village }) {
             <Source>{v.nameOriginSource}</Source>
           </>
         )}
-        {v.aliases.length > 0 && (
+        {(v.aliases ?? []).length > 0 && (
           <>
             <h3>أسماء أخرى</h3>
             <ul className="plain">
-              {v.aliases.map((a) => (
+              {(v.aliases ?? []).map((a) => (
                 <li key={`${a.type}-${a.value}`}>
                   <b>{a.value}</b> <span className="muted">— {NAME_TYPE_LABEL[a.type]}</span>
                   {a.source && (

@@ -181,8 +181,13 @@ export class GeocodingService {
   async search(name: string) {
     const key = name.trim().toLowerCase();
     const cached = this.cache.get(key);
-    if (cached && cached.expires > Date.now())
-      return this.result(cached.places, true);
+    if (cached) {
+  if (cached.expires > Date.now()) {
+    return this.result(cached.places, true);
+  }
+
+  this.cache.delete(key);
+}
     const existing = this.pending.get(key);
     if (existing) return this.result(await existing, false);
     if (Date.now() < this.nextRequest)

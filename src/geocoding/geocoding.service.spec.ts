@@ -151,4 +151,92 @@ it('spaces outgoing provider attempts by at least one second', async () => {
   expect(starts).toHaveLength(2);
   expect(starts[1] - starts[0]).toBeGreaterThanOrEqual(1000);
 });
+it('rejects malformed JSON without retrying', async () => {
+  const fetcher = jest
+    .spyOn(globalThis, 'fetch')
+    .mockResolvedValue(new Response('invalid JSON'));
+
+  await expect(
+    new OpenMeteoProvider().search('Nablus'),
+  ).rejects.toThrow('Invalid provider JSON response');
+
+  expect(fetcher).toHaveBeenCalledTimes(1);
+});
+
+it.each([null, [], { results: 'invalid' }, { results: null }])(
+  'rejects invalid response structure: %j',
+  async (payload) => {
+    const fetcher = jest
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValue(
+        new Response(JSON.stringify(payload)),
+      );
+
+    await expect(
+      new OpenMeteoProvider().search('Nablus'),
+    ).rejects.toThrow('Invalid provider response');
+
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  },
+);
+
+it.each([
+  null,
+  { name: '', latitude: 32, longitude: 35 },
+  { name: '   ', latitude: 32, longitude: 35 },
+  { name: 'Test', latitude: 32, longitude: 200 },
+  { name: 'Test', latitude: '32', longitude: 35 },
+])('rejects invalid place data: %j', async (place) => {
+  const fetcher = jest
+    .spyOn(globalThis, 'fetch')
+    .mockResolvedValue(
+      new Response(JSON.stringify({ results: [place] })),
+    );
+
+  await expect(
+    new OpenMeteoProvider().search('Nablus'),
+  ).rejects.toThrow('Invalid provider coordinates');
+
+  expect(fetcher).toHaveBeenCalledTimes(1);
+});
+
+it('accepts a response without search results', async () => {
+  jest.spyOn(globalThis, 'fetch').mockResolvedValue(
+    new Response(JSON.stringify({})),
+  );
+
+  expect(
+    await new OpenMeteoProvider().search('Nablus'),
+  ).toEqual([]);
+});
+
+it('maps valid provider data to the application model', async () => {
+  jest.spyOn(globalThis, 'fetch').mockResolvedValue(
+    new Response(
+      JSON.stringify({
+        results: [
+          {
+            name: 'Nablus',
+            latitude: 32.22,
+            longitude: 35.26,
+            country: 'Palestine',
+            admin1: 'Nablus',
+          },
+        ],
+      }),
+    ),
+  );
+
+  expect(
+    await new OpenMeteoProvider().search('Nablus'),
+  ).toEqual([
+    {
+      name: 'Nablus',
+      latitude: 32.22,
+      longitude: 35.26,
+      country: 'Palestine',
+      governorate: 'Nablus',
+    },
+  ]);
+});
 });

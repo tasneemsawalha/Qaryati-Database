@@ -96,22 +96,49 @@ private applyRetryAfter(value: string | null): void {
           throw new ServiceUnavailableException(
             'Geocoding provider unavailable',
           );
-        const data = (await response.json()) as {
-          results?: Array<{
-            name: string;
-            latitude: number;
-            longitude: number;
-            country?: string;
-            admin1?: string;
-          }>;
+        let data: {
+         results?: Array<{
+         name: string;
+         latitude: number;
+         longitude: number;
+         country?: string;
+         admin1?: string;
+         }>;
         };
-        if (!data || typeof data !== 'object')
+
+        try {
+         data = await response.json();
+        } catch (error) {
+          if (
+  error instanceof SyntaxError ||
+  (
+    typeof error === 'object' &&
+    error !== null &&
+    'name' in error &&
+    error.name === 'SyntaxError'
+  )
+) {
+           throw new ServiceUnavailableException(
+            'Invalid provider JSON response',
+           );
+          }
+
+           throw error;
+         }
+        if (
+  !data ||
+  typeof data !== 'object' ||
+  Array.isArray(data)
+)
           throw new ServiceUnavailableException('Invalid provider response');
         if (data.results !== undefined && !Array.isArray(data.results))
           throw new ServiceUnavailableException('Invalid provider response');
         return (data.results || []).map((p) => {
           if (
+            !p ||
+            typeof p !== 'object' ||
             typeof p.name !== 'string' ||
+            p.name.trim().length === 0 ||
             !Number.isFinite(p.latitude) ||
             Math.abs(p.latitude) > 90 ||
             !Number.isFinite(p.longitude) ||

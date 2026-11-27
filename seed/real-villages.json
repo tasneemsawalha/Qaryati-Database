@@ -1,0 +1,816 @@
+{
+  "_note": "Real Palestinian villages. Every figure carries the source it was taken from; fields with no verified source are left empty on purpose. Collected 2026-11-27.",
+  "villages": [
+    {
+      "village": {
+        "arabicName": "سبسطية",
+        "englishName": "Sebastia",
+        "governorate": "نابلس",
+        "localCouncil": "بلدية سبسطية",
+        "municipalityRelationship": "بلدية (منذ 1997)",
+        "nameOrigin": "يحمل الاسم الروماني سيباستي (Sebaste)، الذي أطلقه هيرودس على المدينة حوالي 25 ق.م تكريماً للإمبراطور أوغسطس؛ وكلمة Sebaste هي المقابل اليوناني لـ Augustus.",
+        "nameOriginSource": "See the Holy Land, \"Sebastiya\" — https://www.seetheholyland.net/sebastiya/",
+        "latitude": 32.27667,
+        "longitude": 35.19583,
+        "landAreaKm2": 4.8,
+        "locationDescription": "تقع على بعد نحو 12 كم شمال غرب مدينة نابلس، والموقع الأثري لسامرية-سيباستي يقع مباشرة شرق المنطقة المبنية.",
+        "historicalOverview": "تُعدّ من أقدم الأماكن المأهولة باستمرار في الضفة الغربية. عُرفت في القرن التاسع قبل الميلاد باسم السامرة (Samaria). دخلت الحكم العثماني عام 1517، وظهرت في سجلات الضرائب العثمانية عام 1596 ضمن ناحية جبل سامي في لواء نابلس. بين 1915 و1938 خدمتها محطتان على خط سكة حديد العفولة–نابلس–طولكرم.",
+        "historySource": "Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus",
+        "aliases": [
+          {
+            "value": "Sabastiya",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus"
+          },
+          {
+            "value": "Sebaste",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus"
+          },
+          {
+            "value": "السامرة / Samaria",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "نابلس",
+            "relationship": "NEARBY",
+            "distanceKm": 12
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 1922,
+          "population": 572,
+          "source": "Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus (Census of Palestine 1922)"
+        },
+        {
+          "year": 1945,
+          "population": 1020,
+          "source": "Village Statistics 1945, Nablus Sub-District — https://en.wikipedia.org/wiki/Nablus_Subdistrict,_Mandatory_Palestine"
+        },
+        {
+          "year": 2017,
+          "population": 3205,
+          "source": "PCBS, Preliminary Results of the Population, Housing and Establishments Census 2017 (Feb 2018), as cited by Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "EVENT",
+          "title": "تدمير السامرة على يد الآشوريين",
+          "description": "دمّر الآشوريون السامرة عام 722 ق.م، فانتهت مملكة إسرائيل الشمالية.",
+          "year": -722,
+          "source": "See the Holy Land — https://www.seetheholyland.net/sebastiya/"
+        },
+        {
+          "kind": "EVENT",
+          "title": "هيرودس يوسّع المدينة ويسميها سيباستي",
+          "description": "وسّع هيرودس الكبير المدينة حوالي 25 ق.م وأعاد تسميتها سيباستي تكريماً لأوغسطس قيصر.",
+          "year": -25,
+          "source": "See the Holy Land — https://www.seetheholyland.net/sebastiya/"
+        },
+        {
+          "kind": "EVENT",
+          "title": "ظهورها في سجلات الضرائب العثمانية",
+          "description": "ظهرت سبسطية في سجلات الضرائب العثمانية ضمن ناحية جبل سامي، لواء نابلس.",
+          "year": 1596,
+          "source": "Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus"
+        },
+        {
+          "kind": "EVENT",
+          "title": "محطتا سكة حديد قرب القرية",
+          "description": "بين 1915 و1938 خدمت القرية محطتان على فرع العفولة–نابلس–طولكرم من سكة حديد مرج ابن عامر: محطة المسعودية ومحطة سبسطية.",
+          "year": 1915,
+          "source": "Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus"
+        },
+        {
+          "kind": "LANDMARK",
+          "title": "الموقع الأثري سامرية–سيباستي",
+          "description": "موقع أثري على المنحدر الشرقي للتلّ فوق القرية الحالية، كان عاصمة المملكة الشمالية في العصر الحديدي الثاني ومركزاً حضرياً مهماً في الفترتين الهلنستية والرومانية.",
+          "category": "موقع أثري",
+          "latitude": 32.27639,
+          "longitude": 35.195,
+          "source": "UNESCO Tentative List, \"Sebastia\" (ref. 5718) — https://whc.unesco.org/en/tentativelists/5718"
+        },
+        {
+          "kind": "LANDMARK",
+          "title": "مسجد النبي يحيى",
+          "description": "مسجد في القرية كان في الأصل كاتدرائية صليبية.",
+          "category": "مكان ديني",
+          "source": "Wikipedia, \"Sebastia, Nablus\" — https://en.wikipedia.org/wiki/Sebastia,_Nablus"
+        }
+      ]
+    },
+    {
+      "village": {
+        "arabicName": "بتير",
+        "englishName": "Battir",
+        "governorate": "بيت لحم",
+        "localCouncil": "بلدية بتير",
+        "municipalityRelationship": "بلدية",
+        "nameOrigin": "نسبة إلى مدينة بيتار القديمة.",
+        "nameOriginSource": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir",
+        "latitude": 31.72472,
+        "longitude": 35.13667,
+        "elevationMeters": 760,
+        "landAreaKm2": 7.4,
+        "locationDescription": "على بعد 6.4 كم غرب بيت لحم وجنوب غرب القدس، على تلّ فوق وادي الجندي. حوالي 30% من أراضيها تقع داخل إسرائيل.",
+        "historicalOverview": "في نطاقها موقع أثري يضم بقايا بيتار، آخر معاقل ثورة بار كوخبا ضد الإمبراطورية الرومانية. ظهرت في سجلات الضرائب العثمانية عام 1596 بـ24 أسرة مسلمة. تشتهر بمدرجاتها الزراعية القديمة ونظام ريّ يعود للفترة الرومانية، ولهذا أُدرجت عام 2014 على قائمة التراث العالمي.",
+        "historySource": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir",
+        "aliases": [
+          {
+            "value": "Bateer",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir"
+          },
+          {
+            "value": "Betar / بيتار",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "بيت لحم",
+            "relationship": "NEARBY",
+            "distanceKm": 6.4
+          },
+          {
+            "name": "وادي فوكين",
+            "relationship": "NEARBY"
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 1931,
+          "population": 758,
+          "source": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir (Census of Palestine 1931)"
+        },
+        {
+          "year": 1945,
+          "population": 1050,
+          "source": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir (Village Statistics 1945)"
+        },
+        {
+          "year": 1997,
+          "population": 3095,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/bayt_lahm/452175__battir"
+        },
+        {
+          "year": 2007,
+          "population": 3967,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/bayt_lahm/452175__battir"
+        },
+        {
+          "year": 2017,
+          "population": 4696,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/bayt_lahm/452175__battir"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "EVENT",
+          "title": "إدراجها على قائمة التراث العالمي",
+          "description": "أُدرجت بتير عام 2014 على قائمة اليونسكو للتراث العالمي باسم \"فلسطين: أرض الزيتون والعنب – المشهد الثقافي لجنوب القدس، بتير\".",
+          "year": 2014,
+          "source": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir"
+        },
+        {
+          "kind": "LANDMARK",
+          "title": "البركة الرومانية",
+          "description": "بركة حجرية في وسط القرية بعمق نحو أربعة أمتار، تجمع مياه الينابيع وتوزّعها على مدرجات العائلات المالكة للأرض.",
+          "category": "بركة / نظام ريّ",
+          "source": "Enjoy Bethlehem, \"The Roman Pool of Battir\" — https://enjoybethlehem.com/see/the-roman-pool-of-battir"
+        },
+        {
+          "kind": "LANDMARK",
+          "title": "عين البلد",
+          "description": "نبع القرية، محاطة ببيت نبع، وتصل مياهها عبر قنوات إلى البركة القديمة.",
+          "category": "عين ماء",
+          "source": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir"
+        },
+        {
+          "kind": "HERITAGE",
+          "title": "المدرجات الزراعية ونظام الريّ",
+          "description": "مدرجات حجرية ونظام ريّ يعود للفترة الرومانية ولا يزال مستخدماً، تُحوَّل فيه المياه يدوياً عبر بوابات.",
+          "category": "ممارسة زراعية تقليدية",
+          "source": "Wikipedia, \"Battir\" — https://en.wikipedia.org/wiki/Battir"
+        },
+        {
+          "kind": "ECONOMY",
+          "title": "الزراعة المروية على المدرجات",
+          "description": "توفّر الينابيع المياه طوال السنة، فتُزرع الخضار والأشجار المثمرة في الأودية، والزيتون والعنب على المنحدرات.",
+          "category": "زراعة",
+          "source": "UNESCO nomination file, Battir — https://whc.unesco.org/document/167422"
+        }
+      ]
+    },
+    {
+      "village": {
+        "arabicName": "الطيبة",
+        "englishName": "Taybeh",
+        "governorate": "رام الله والبيرة",
+        "nameOrigin": "\"الطيبة\" تعني \"الطيّبة\". كانت تُعرف سابقاً باسم \"عفرا\"، وتغيّر الاسم بحسب الرواية تجنّباً لتشابهه مع كلمة \"عفريت\".",
+        "nameOriginSource": "Wikipedia, \"Taybeh, Ramallah\" — https://en.wikipedia.org/wiki/Taybeh,_Ramallah",
+        "latitude": 31.95444,
+        "longitude": 35.30028,
+        "elevationMeters": 900,
+        "locationDescription": "على بعد 15 كم شمال شرق القدس و12 كم شمال شرق رام الله. ملاحظة: ويكيبيديا تذكر الارتفاع 900 م في بطاقة المعلومات و850 م في النص؛ اعتمدنا 900 م.",
+        "historicalOverview": "اقترح مسح غرب فلسطين (SWP) عام 1882 أنها عفرة (Ophrah) القديمة من سبط بنيامين، وأيّد علماء بارزون هذا التعريف لاحقاً. يذكرها يوسيفوس باسم \"إفرايم\". وهي من القرى القليلة ذات الأغلبية المسيحية في الضفة الغربية.",
+        "historySource": "Wikipedia, \"Taybeh, Ramallah\" — https://en.wikipedia.org/wiki/Taybeh,_Ramallah",
+        "aliases": [
+          {
+            "value": "Taibe",
+            "type": "TRANSLITERATION"
+          },
+          {
+            "value": "عفرا / Afrah",
+            "type": "FORMER",
+            "source": "Wikipedia, \"Taybeh, Ramallah\" — https://en.wikipedia.org/wiki/Taybeh,_Ramallah"
+          },
+          {
+            "value": "Ophrah",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Taybeh, Ramallah\" — https://en.wikipedia.org/wiki/Taybeh,_Ramallah"
+          },
+          {
+            "value": "Ephraim",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Taybeh, Ramallah\" — https://en.wikipedia.org/wiki/Taybeh,_Ramallah"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "رام الله",
+            "relationship": "NEARBY",
+            "distanceKm": 12
+          },
+          {
+            "name": "القدس",
+            "relationship": "NEARBY",
+            "distanceKm": 15
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 1997,
+          "population": 1504,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/ram_allah_al_birah/301685__at_tayba"
+        },
+        {
+          "year": 2007,
+          "population": 1452,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/ram_allah_al_birah/301685__at_tayba"
+        },
+        {
+          "year": 2017,
+          "population": 1340,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/ram_allah_al_birah/301685__at_tayba"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "EVENT",
+          "title": "تعريفها بعفرة القديمة",
+          "description": "اقترح مسح غرب فلسطين (SWP) عام 1882 أن الطيبة هي عفرة القديمة.",
+          "year": 1882,
+          "source": "Wikipedia, \"Taybeh, Ramallah\" — https://en.wikipedia.org/wiki/Taybeh,_Ramallah"
+        },
+        {
+          "kind": "ECONOMY",
+          "title": "مصنع بيرة الطيبة",
+          "description": "تضم القرية مصنع بيرة الطيبة، أحد المصانع القليلة من نوعه في فلسطين.",
+          "category": "صناعة",
+          "source": "Wikipedia, \"Taybeh, Ramallah\" — https://en.wikipedia.org/wiki/Taybeh,_Ramallah"
+        }
+      ]
+    },
+    {
+      "village": {
+        "arabicName": "جفنا",
+        "englishName": "Jifna",
+        "governorate": "رام الله والبيرة",
+        "localCouncil": "مجلس قروي جفنا",
+        "municipalityRelationship": "مجلس قروي (منذ 1954)",
+        "nameOrigin": "يعود الاسم إلى \"جوفنا\" (Gophna)، اسم البلدة في العصر الروماني.",
+        "nameOriginSource": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna",
+        "latitude": 31.96194,
+        "longitude": 35.21556,
+        "landAreaKm2": 6.0,
+        "locationDescription": "على بعد 8 كم شمال رام الله و23 كم شمال القدس.",
+        "historicalOverview": "أقدم ذكر لها باسم جوفنا في رواية يوسيفوس عن هروب يهوذا المكابي نحو 164 ق.م. صارت في العهد الروماني مركزاً إدارياً وعاصمة لمقاطعة (toparchy)، وتظهر على خريطة مأدبا. احتفظت بأغلبية مسيحية منذ القرن السادس. في القرن التاسع عشر استخدم العثمانيون بقايا \"برج جفنا\" سجناً.",
+        "historySource": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna",
+        "aliases": [
+          {
+            "value": "Jufna",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+          },
+          {
+            "value": "Gophna",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+          },
+          {
+            "value": "Cofna",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "رام الله",
+            "relationship": "NEARBY",
+            "distanceKm": 8
+          },
+          {
+            "name": "مخيم الجلزون",
+            "relationship": "BORDERS"
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 2007,
+          "population": 1716,
+          "source": "PCBS Census 2007, as cited by Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+        },
+        {
+          "year": 2017,
+          "population": 2919,
+          "source": "PCBS, Preliminary Results of the Population, Housing and Establishments Census 2017 (Feb 2018), as cited by Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "EVENT",
+          "title": "أول ذكر تاريخي باسم جوفنا",
+          "description": "تَرِد في رواية يوسيفوس عن هروب يهوذا المكابي من أنطيوخوس الخامس أثناء الثورة المكابية.",
+          "year": -164,
+          "source": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+        },
+        {
+          "kind": "EVENT",
+          "title": "ثورة ضد الحكم المصري",
+          "description": "اندلعت ثورة ضد السلطات المصرية في منطقة جفنا، ونُفي 26 من أهلها إلى مصر بتهمة المشاركة فيها.",
+          "year": 1834,
+          "source": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+        },
+        {
+          "kind": "LANDMARK",
+          "title": "برج جفنا",
+          "description": "بقايا قلعة رومانية في القرية، استخدمها العثمانيون سجناً في القرن التاسع عشر.",
+          "category": "موقع أثري",
+          "source": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+        },
+        {
+          "kind": "ECONOMY",
+          "title": "زيت الزيتون",
+          "description": "تاريخياً كان زيت الزيتون السلعة الرئيسية للقرية.",
+          "category": "زيتون",
+          "source": "Wikipedia, \"Jifna\" — https://en.wikipedia.org/wiki/Jifna"
+        }
+      ]
+    },
+    {
+      "village": {
+        "arabicName": "بيتا",
+        "englishName": "Beita",
+        "governorate": "نابلس",
+        "localCouncil": "بلدية بيتا",
+        "municipalityRelationship": "بلدية (منذ 1996)",
+        "nameOrigin": "من \"بيت\" بمعنى المنزل.",
+        "nameOriginSource": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus (Palmer, 1881, p. 226)",
+        "latitude": 32.14361,
+        "longitude": 35.2875,
+        "landAreaKm2": 76.0,
+        "locationDescription": "على بعد 9–11 كم جنوب نابلس (مع تجمع زعترة). تحدها أوصرين وعقربا شرقاً، وعورتا وأودلا شمالاً، وحوارة وياسوف غرباً، ويتما وقبلان جنوباً.",
+        "historicalOverview": "ظهرت في سجلات الضرائب العثمانية عام 1596 ضمن ناحية جبل قبال في لواء نابلس، وفيها 50 أسرة مسلمة. وصفها إدوارد روبنسون عام 1838 بأنها \"قرية كبيرة\". في تعداد 1961 الأردني كانت مقسومة إلى بيتا التحتا (693 نسمة) وبيتا الفوقا (1,498 نسمة).",
+        "historySource": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus",
+        "aliases": [
+          {
+            "value": "Bayta",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus"
+          },
+          {
+            "value": "بيتا الفوقا",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus"
+          },
+          {
+            "value": "بيتا التحتا",
+            "type": "HISTORICAL",
+            "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "حوارة",
+            "relationship": "BORDERS"
+          },
+          {
+            "name": "عقربا",
+            "relationship": "BORDERS"
+          },
+          {
+            "name": "عورتا",
+            "relationship": "BORDERS"
+          },
+          {
+            "name": "نابلس",
+            "relationship": "NEARBY",
+            "distanceKm": 11
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 1922,
+          "population": 883,
+          "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus (Census of Palestine 1922)"
+        },
+        {
+          "year": 1931,
+          "population": 1194,
+          "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus (Census of Palestine 1931)"
+        },
+        {
+          "year": 1945,
+          "population": 1580,
+          "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus (Village Statistics 1945)"
+        },
+        {
+          "year": 1961,
+          "population": 2191,
+          "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus (Jordanian census 1961: Beita Tahta 693 + Beita Fauqa 1,498)"
+        },
+        {
+          "year": 2017,
+          "population": 11682,
+          "source": "PCBS, Preliminary Results of the Population, Housing and Establishments Census 2017 (Feb 2018), as cited by Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "EVENT",
+          "title": "ظهورها في سجلات الضرائب العثمانية",
+          "description": "سُجّلت ضمن ناحية جبل قبال، لواء نابلس، وفيها 50 أسرة مسلمة.",
+          "year": 1596,
+          "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus"
+        },
+        {
+          "kind": "EVENT",
+          "title": "زيارة إدوارد روبنسون",
+          "description": "وصفها الرحالة إدوارد روبنسون بأنها \"قرية كبيرة\" في منطقة البيتاوي شرق نابلس.",
+          "year": 1838,
+          "source": "Wikipedia, \"Beita, Nablus\" — https://en.wikipedia.org/wiki/Beita,_Nablus"
+        }
+      ]
+    },
+    {
+      "village": {
+        "arabicName": "عرّابة",
+        "englishName": "Arraba",
+        "governorate": "جنين",
+        "localCouncil": "بلدية عرابة",
+        "municipalityRelationship": "بلدية (منذ 1995)",
+        "nameOrigin": "\"السهل / البادية\" (A steppe).",
+        "nameOriginSource": "Wikipedia, \"Arraba, Jenin\" — https://en.wikipedia.org/wiki/Arraba,_Jenin (Palmer, 1881, p. 179)",
+        "elevationMeters": 350,
+        "landAreaKm2": 39.6,
+        "locationDescription": "على بعد 12 كم جنوب غرب جنين، قرب سهل عرابة الواقع بين جبل الكرمل ونابلس. (الإحداثيات لم تُضَف لعدم التحقق منها من مصدر.)",
+        "historicalOverview": "عرابة موطن عائلة عبد الهادي، التي كانت من كبار ملّاك الأراضي في مناطق العفولة وبيسان وجنين ونابلس، وكانت مقر نفوذهم (قرية كرسي). في نيسان 1859 اقتحمها تحالف من القوات العثمانية وزعامات محلية معادية للعائلة، فهُدمت تحصيناتها، وبذلك قضى العثمانيون على آخر معاقل الحكم المحلي المستقل في منطقة نابلس.",
+        "historySource": "Wikipedia, \"Arraba, Jenin\" — https://en.wikipedia.org/wiki/Arraba,_Jenin",
+        "aliases": [
+          {
+            "value": "Arrabeh",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Arraba, Jenin\" — https://en.wikipedia.org/wiki/Arraba,_Jenin"
+          },
+          {
+            "value": "Arrabah",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Arraba, Jenin\" — https://en.wikipedia.org/wiki/Arraba,_Jenin"
+          },
+          {
+            "value": "عرابة جنين / Arrabet Jenin",
+            "type": "ALTERNATIVE",
+            "source": "Wikipedia, \"Arraba, Jenin\" — https://en.wikipedia.org/wiki/Arraba,_Jenin"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "جنين",
+            "relationship": "NEARBY",
+            "distanceKm": 12
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 1961,
+          "population": 4865,
+          "source": "Wikipedia, \"Arraba, Jenin\" — https://en.wikipedia.org/wiki/Arraba,_Jenin (Jordanian census 1961)"
+        },
+        {
+          "year": 1997,
+          "population": 7454,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/janin/010370__arraba/"
+        },
+        {
+          "year": 2007,
+          "population": 9920,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/janin/010370__arraba/"
+        },
+        {
+          "year": 2017,
+          "population": 11479,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/janin/010370__arraba/"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "EVENT",
+          "title": "بناء المسجد المركزي",
+          "description": "بنى حسين عبد الهادي المسجد المركزي للبلدة عام 1819، وتحت منبره مغارة فيها مقام الشيخ عرابيل.",
+          "year": 1819,
+          "source": "Wikipedia, \"Arraba, Jenin\" — https://en.wikipedia.org/wiki/Arraba,_Jenin"
+        },
+        {
+          "kind": "EVENT",
+          "title": "اقتحام عرابة وهدم تحصيناتها",
+          "description": "اقتحم تحالف من القوات العثمانية وزعامات محلية عرابة، ففرّ أو أُسر أفراد من عائلة عبد الهادي وهُدمت التحصينات.",
+          "year": 1859,
+          "source": "Wikipedia, \"Arraba, Jenin\" — https://en.wikipedia.org/wiki/Arraba,_Jenin"
+        },
+        {
+          "kind": "LANDMARK",
+          "title": "قصور آل عبد الهادي",
+          "description": "نحو 13 قصراً لعائلة عبد الهادي، أولها قصر صالح عبد الهادي في الجهة الشرقية من البلدة، ولا تزال آثار القذائف ظاهرة على جدرانه.",
+          "category": "مبانٍ تاريخية",
+          "source": "Travel Palestine, \"Abd al-Hadi Palaces, Arraba Palaces\" — https://www.travelpalestine.ps/en/Site/48"
+        }
+      ]
+    },
+    {
+      "village": {
+        "arabicName": "دير إستيا",
+        "englishName": "Deir Istiya",
+        "governorate": "سلفيت",
+        "localCouncil": "مجلس قروي دير إستيا",
+        "municipalityRelationship": "مجلس قروي",
+        "nameOrigin": "\"دير إستيا\". ويُعتقد أن \"إستيا\" مشتقة من كلمة سريانية بمعنى \"الجدار\".",
+        "nameOriginSource": "Wikipedia, \"Deir Istiya\" — https://en.wikipedia.org/wiki/Deir_Istiya; Travel Palestine — https://www.travelpalestine.ps/en/Site/280",
+        "latitude": 32.13056,
+        "longitude": 35.14,
+        "elevationMeters": 379,
+        "landAreaKm2": 36.0,
+        "locationDescription": "على تلّ متوسط الارتفاع على بعد نحو 6.6 كم شمال سلفيت و15 كم جنوب غرب نابلس، قرب وادي قانا. ملاحظة: ويكيبيديا تذكر الارتفاع 379 م بينما يذكر موقع Travel Palestine 430 م؛ اعتمدنا 379 م.",
+        "historicalOverview": "وُجدت فيها آثار من عصور مختلفة منها العصر المملوكي، ويضم بلدها القديم نحو ثلاثين عائلة.",
+        "historySource": "Wikipedia, \"Deir Istiya\" — https://en.wikipedia.org/wiki/Deir_Istiya",
+        "aliases": [
+          {
+            "value": "Deir Istya",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Deir Istiya\" — https://en.wikipedia.org/wiki/Deir_Istiya"
+          },
+          {
+            "value": "Dayr Istiya",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Deir Istiya\" — https://en.wikipedia.org/wiki/Deir_Istiya"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "سلفيت",
+            "relationship": "NEARBY",
+            "distanceKm": 6.6
+          },
+          {
+            "name": "كفل حارس",
+            "relationship": "NEARBY"
+          },
+          {
+            "name": "جينصافوط",
+            "relationship": "BORDERS"
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 1997,
+          "population": 2803,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/25__salfit"
+        },
+        {
+          "year": 1997,
+          "population": 2802,
+          "source": "Wikipedia, \"Deir Istiya\" — https://en.wikipedia.org/wiki/Deir_Istiya (PCBS 1997 census)",
+          "notes": "يختلف بنسمة واحدة عن رقم City Population لنفس التعداد — مثال على تعارض المصادر."
+        },
+        {
+          "year": 2007,
+          "population": 3146,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/25__salfit"
+        },
+        {
+          "year": 2017,
+          "population": 3696,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/25__salfit"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "ECONOMY",
+          "title": "زيت الزيتون",
+          "description": "تحتل المرتبة الثالثة في فلسطين في إنتاج زيت الزيتون بعد دير الغصون وعصيرة الشمالية، ويعتمد جزء من السكان على تربية المواشي.",
+          "category": "زيتون",
+          "source": "Travel Palestine, \"Deir Istiya\" — https://www.travelpalestine.ps/en/Site/280"
+        },
+        {
+          "kind": "LANDMARK",
+          "title": "وادي قانا",
+          "description": "وادٍ قريب من البلدة فيه مصدر مياه دائم.",
+          "category": "وادٍ / مياه",
+          "source": "Travel Palestine — https://www.travelpalestine.ps/en/Site/280"
+        },
+        {
+          "kind": "LANDMARK",
+          "title": "مقاما الشيخ حسين والشيخ خاطر",
+          "description": "من المواقع الدينية في البلدة، إلى جانب مسجدين قديمين.",
+          "category": "مكان ديني",
+          "source": "Travel Palestine — https://www.travelpalestine.ps/en/Site/280"
+        }
+      ]
+    },
+    {
+      "village": {
+        "arabicName": "كفر قدوم",
+        "englishName": "Kafr Qaddum",
+        "governorate": "قلقيلية",
+        "localCouncil": "مجلس قروي كفر قدوم",
+        "municipalityRelationship": "مجلس قروي",
+        "nameOrigin": "\"قرية قدوم\".",
+        "nameOriginSource": "Wikipedia, \"Kafr Qaddum\" — https://en.wikipedia.org/wiki/Kafr_Qaddum",
+        "latitude": 32.22167,
+        "longitude": 35.14278,
+        "landAreaKm2": 18.9,
+        "locationDescription": "على بعد 13 كم غرب نابلس و17 كم شرق قلقيلية. تحدها جيت شرقاً، وإماتين جنوباً، وكور وحجة غرباً، وبيت ليد وقوصين ودير شرف شمالاً.",
+        "historicalOverview": "تشير الأدلة الأثرية إلى أنها مأهولة منذ العصر البرونزي المبكر. ظهرت في سجلات الضرائب العثمانية عام 1596 ضمن ناحية جبل قبال، لواء نابلس، وفيها 19 أسرة وأعزبان.",
+        "historySource": "Wikipedia, \"Kafr Qaddum\" — https://en.wikipedia.org/wiki/Kafr_Qaddum",
+        "aliases": [
+          {
+            "value": "Kafar Qaddum",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Kafr Qaddum\" — https://en.wikipedia.org/wiki/Kafr_Qaddum"
+          },
+          {
+            "value": "Kefr Kaddum",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Kafr Qaddum\" — https://en.wikipedia.org/wiki/Kafr_Qaddum"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "جيت",
+            "relationship": "BORDERS"
+          },
+          {
+            "name": "حجة",
+            "relationship": "BORDERS"
+          },
+          {
+            "name": "قلقيلية",
+            "relationship": "NEARBY",
+            "distanceKm": 17
+          },
+          {
+            "name": "نابلس",
+            "relationship": "NEARBY",
+            "distanceKm": 13
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 1997,
+          "population": 2482,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/qalqilyah/200925__kafr_qaddum"
+        },
+        {
+          "year": 2007,
+          "population": 2908,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/qalqilyah/200925__kafr_qaddum"
+        },
+        {
+          "year": 2017,
+          "population": 3280,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/qalqilyah/200925__kafr_qaddum"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "EVENT",
+          "title": "ظهورها في سجلات الضرائب العثمانية",
+          "description": "19 أسرة وأعزبان، جميعهم مسلمون، ضمن ناحية جبل قبال.",
+          "year": 1596,
+          "source": "Wikipedia, \"Kafr Qaddum\" — https://en.wikipedia.org/wiki/Kafr_Qaddum"
+        }
+      ]
+    },
+    {
+      "village": {
+        "arabicName": "عابود",
+        "englishName": "Aboud",
+        "governorate": "رام الله والبيرة",
+        "localCouncil": "مجلس قروي عابود",
+        "municipalityRelationship": "مجلس قروي",
+        "nameOrigin": "من الاسم الشخصي \"عابود\"، من الفعل \"عَبَد\".",
+        "nameOriginSource": "Wikipedia, \"Aboud\" — https://en.wikipedia.org/wiki/Aboud (Palmer, 1881)",
+        "latitude": 32.015,
+        "longitude": 35.06806,
+        "landAreaKm2": 15.0,
+        "locationDescription": "على بعد 17.7 كم شمال غرب رام الله و30 كم شمال القدس. تحدها دير نظام شرقاً، وبني زيد شمالاً، ورنتيس واللبن الغربي غرباً، ودير أبو مشعل جنوباً.",
+        "historicalOverview": "يعتقد علماء الآثار، بناءً على مغارة عابود والمقبرة المجاورة، أنها كانت موقعاً مأهولاً في أواخر فترة الهيكل الثاني حتى ثورة بار كوخبا. فيها كنائس قديمة بُنيت في الفترة البيزنطية بين القرنين السادس والثامن، وأغلب سكانها مسيحيون من الروم الأرثوذكس.",
+        "historySource": "Wikipedia, \"Aboud\" — https://en.wikipedia.org/wiki/Aboud",
+        "aliases": [
+          {
+            "value": "'Abud",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Aboud\" — https://en.wikipedia.org/wiki/Aboud"
+          },
+          {
+            "value": "Abboud",
+            "type": "TRANSLITERATION",
+            "source": "Wikipedia, \"Aboud\" — https://en.wikipedia.org/wiki/Aboud"
+          }
+        ],
+        "nearbyPlaces": [
+          {
+            "name": "دير نظام",
+            "relationship": "BORDERS"
+          },
+          {
+            "name": "بني زيد",
+            "relationship": "BORDERS"
+          },
+          {
+            "name": "رام الله",
+            "relationship": "NEARBY",
+            "distanceKm": 17.7
+          }
+        ]
+      },
+      "population": [
+        {
+          "year": 1922,
+          "population": 754,
+          "source": "POICA, Aboud village profile — https://poica.org/?p=19247"
+        },
+        {
+          "year": 1967,
+          "population": 500,
+          "source": "Israeli 1967 census, vol. 1 table 3 — https://www.levyinstitute.org/levy-files/pubs/1967_census/vol_1_tab_3.pdf"
+        },
+        {
+          "year": 1997,
+          "population": 1739,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/ram_allah_al_birah/301535__abud"
+        },
+        {
+          "year": 2007,
+          "population": 2084,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/ram_allah_al_birah/301535__abud"
+        },
+        {
+          "year": 2017,
+          "population": 2153,
+          "source": "PCBS census via City Population — https://www.citypopulation.de/en/palestine/westbank/ram_allah_al_birah/301535__abud"
+        }
+      ],
+      "entries": [
+        {
+          "kind": "ECONOMY",
+          "title": "الزيتون ومنتجاته",
+          "description": "اعتمد اقتصاد عابود تاريخياً على الزراعة، وخاصة الزيتون، الذي يشغل في القرن الحادي والعشرين 43% من أراضي القرية.",
+          "category": "زيتون",
+          "source": "Wikipedia, \"Aboud\" — https://en.wikipedia.org/wiki/Aboud"
+        },
+        {
+          "kind": "HERITAGE",
+          "title": "الكنائس البيزنطية",
+          "description": "كنائس قديمة بُنيت في الفترة البيزنطية بين القرنين السادس والثامن الميلاديين.",
+          "category": "مبانٍ دينية تاريخية",
+          "source": "Wikipedia, \"Aboud\" — https://en.wikipedia.org/wiki/Aboud"
+        }
+      ]
+    }
+  ]
+}

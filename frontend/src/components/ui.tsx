@@ -98,7 +98,33 @@ export function useAction() {
   return { busy, error, setError, run };
 }
 
+/** Renders a source string; a trailing URL becomes a short link to the reference. */
+export function SourceText({ text }: { text: string }) {
+  const match = /^(.*?)\s*(?:—|-)?\s*(https?:\/\/\S+)(.*)$/s.exec(text);
+  if (!match) return <>{text}</>;
+  const [, label, url, rest] = match;
+  let host = url;
+  try {
+    host = new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    /* keep raw url */
+  }
+  return (
+    <>
+      {label || host}{' '}
+      <a href={url} target="_blank" rel="noreferrer" className="source-link" title={url}>
+        {host} ↗
+      </a>
+      {rest}
+    </>
+  );
+}
+
 export function Source({ children }: { children: ReactNode }) {
   if (!children) return null;
-  return <p className="source">المصدر: {children}</p>;
+  return (
+    <p className="source">
+      المصدر: {typeof children === 'string' ? <SourceText text={children} /> : children}
+    </p>
+  );
 }

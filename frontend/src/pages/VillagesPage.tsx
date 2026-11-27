@@ -4,6 +4,7 @@ import { villages, type VillageQuery } from '../api/endpoints';
 import type { Page, Village } from '../api/types';
 import { Empty, ErrorBox, Loading, Pagination, StatusBadge } from '../components/ui';
 import { GOVERNORATES } from '../labels';
+import heroImage from '../assets/hero.jpg';
 
 export default function VillagesPage() {
   const [params, setParams] = useSearchParams();
@@ -44,7 +45,7 @@ export default function VillagesPage() {
 
   return (
     <>
-      <section className="hero">
+      <section className="hero" style={{ ['--hero-image' as string]: `url(${heroImage})` }}>
         <h1>قرى فلسطين، كما يرويها أهلها والمصادر</h1>
         <p>
           ابحثي عن قرية بالاسم العربي أو الإنجليزي أو بأي اسم قديم أو بديل، وتصفّحي تاريخها

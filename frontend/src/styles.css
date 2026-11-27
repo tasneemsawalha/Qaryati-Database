@@ -1,16 +1,20 @@
 :root {
-  --sand: #f6f1e7;
-  --paper: #fffdf8;
-  --ink: #2b2620;
-  --muted: #7a6f60;
-  --line: #e4dccb;
-  --olive: #4f6b3a;
-  --olive-dark: #3a5129;
-  --olive-soft: #e6ecdc;
-  --clay: #a8432f;
-  --clay-soft: #f6e3dc;
-  --gold: #b7862d;
-  --radius: 10px;
+  /* Palette taken from the hero photo: limestone, tatreez red, bougainvillea, olive leaves, sky. */
+  --sand: #f6efe4;
+  --paper: #fffaf3;
+  --ink: #3a2a1f;
+  --muted: #84705f;
+  --line: #eadfce;
+  --olive: #5b7330;
+  --olive-dark: #435622;
+  --olive-soft: #e8eddb;
+  --clay: #a3172f;
+  --clay-soft: #f8e1e4;
+  --rose: #d42a6b;
+  --rose-dark: #b01d57;
+  --sky: #9cc8ef;
+  --gold: #c08a3e;
+  --radius: 12px;
   font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
   color: var(--ink);
   background: var(--sand);
@@ -35,7 +39,7 @@ h1 {
 }
 h2 {
   font-size: 1.45rem;
-  color: var(--olive-dark);
+  color: var(--clay);
 }
 h3 {
   font-size: 1.2rem;
@@ -87,8 +91,8 @@ code {
   background:
     linear-gradient(135deg, var(--clay) 25%, transparent 25%) -6px 0 / 12px 12px,
     linear-gradient(225deg, var(--clay) 25%, transparent 25%) -6px 0 / 12px 12px,
-    linear-gradient(315deg, var(--olive) 25%, transparent 25%) 0 0 / 12px 12px,
-    linear-gradient(45deg, var(--olive) 25%, transparent 25%) 0 0 / 12px 12px;
+    linear-gradient(315deg, var(--rose) 25%, transparent 25%) 0 0 / 12px 12px,
+    linear-gradient(45deg, var(--rose) 25%, transparent 25%) 0 0 / 12px 12px;
   opacity: 0.85;
 }
 .topbar-inner {
@@ -115,7 +119,7 @@ code {
   font-weight: 400;
 }
 .brand-mark {
-  color: var(--olive);
+  color: var(--rose);
 }
 .nav {
   display: flex;
@@ -131,8 +135,8 @@ code {
 }
 .nav a.active,
 .account a.active {
-  background: var(--olive-soft);
-  color: var(--olive-dark);
+  background: var(--clay-soft);
+  color: var(--clay);
   font-weight: 600;
 }
 .account {
@@ -176,12 +180,12 @@ button:disabled {
   cursor: not-allowed;
 }
 button.primary {
-  background: var(--olive);
+  background: var(--clay);
   color: #fff;
-  border-color: var(--olive);
+  border-color: var(--clay);
 }
 button.primary:hover {
-  background: var(--olive-dark);
+  background: #861226;
 }
 button.danger,
 .link.danger {
@@ -215,16 +219,33 @@ textarea:focus {
 
 /* ---------- home ---------- */
 .hero {
-  background: var(--paper);
-  border: 1px solid var(--line);
+  position: relative;
   border-radius: var(--radius);
-  padding: 32px;
-  margin-bottom: 20px;
-  background-image: radial-gradient(circle at 10% 20%, var(--olive-soft), transparent 40%);
+  padding: clamp(28px, 5vw, 64px) clamp(20px, 4vw, 48px);
+  margin-bottom: 22px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  background:
+    linear-gradient(to left, rgba(46, 22, 18, 0.78) 0%, rgba(46, 22, 18, 0.55) 45%, rgba(46, 22, 18, 0.1) 100%),
+    var(--hero-image) center / cover no-repeat;
+  box-shadow: 0 10px 30px rgba(80, 40, 30, 0.18);
+}
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  max-width: 620px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 .hero p {
-  max-width: 640px;
-  color: var(--muted);
+  max-width: 560px;
+  color: #f7ebe4;
+}
+.hero .searchbar input {
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 .searchbar {
   display: flex;
@@ -236,9 +257,13 @@ textarea:focus {
   font-size: 1.05rem;
 }
 .searchbar button {
-  background: var(--clay);
+  background: var(--rose);
   color: #fff;
-  border-color: var(--clay);
+  border-color: var(--rose);
+  padding-inline: 24px;
+}
+.searchbar button:hover {
+  background: var(--rose-dark);
 }
 .filters {
   display: flex;
@@ -267,7 +292,7 @@ textarea:focus {
   transition:
     transform 0.15s,
     box-shadow 0.15s;
-  border-top: 3px solid var(--olive);
+  border-top: 3px solid var(--clay);
 }
 .village-card:hover {
   transform: translateY(-2px);
@@ -387,7 +412,7 @@ textarea:focus {
   color: var(--muted);
 }
 .tabs button.active {
-  border-bottom-color: var(--clay);
+  border-bottom-color: var(--rose);
   color: var(--ink);
   font-weight: 600;
 }
@@ -561,7 +586,7 @@ textarea:focus {
 .bar {
   display: block;
   height: 100%;
-  background: linear-gradient(to left, var(--olive), var(--olive-dark));
+  background: linear-gradient(to left, var(--rose), var(--clay));
   border-radius: 6px;
 }
 .bar-value {
@@ -584,7 +609,7 @@ textarea:focus {
 .form legend {
   font-family: 'Amiri', serif;
   font-size: 1.3rem;
-  color: var(--olive-dark);
+  color: var(--clay);
   padding: 0 6px;
 }
 .field {
@@ -630,7 +655,24 @@ textarea:focus {
   text-align: start;
 }
 
+a.source-link {
+  color: var(--rose-dark);
+  font-size: 0.85em;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px dotted currentColor;
+}
+.source-cell {
+  font-size: 0.9rem;
+  max-width: 420px;
+}
+
 @media (max-width: 720px) {
+  .hero {
+    background:
+      linear-gradient(to top, rgba(46, 22, 18, 0.85) 0%, rgba(46, 22, 18, 0.6) 60%, rgba(46, 22, 18, 0.35) 100%),
+      var(--hero-image) 30% center / cover no-repeat;
+  }
   .two-col,
   .diff {
     grid-template-columns: 1fr;

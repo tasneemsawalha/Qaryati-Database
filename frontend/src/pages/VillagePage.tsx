@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { villages } from '../api/endpoints';
 import type { EntryKind, Village } from '../api/types';
 import { useAuth } from '../auth';
-import { ErrorBox, Loading, Source, StatusBadge, useAction } from '../components/ui';
+import { ErrorBox, Loading, Source, SourceText, StatusBadge, useAction } from '../components/ui';
 import { KIND_LABEL, NAME_TYPE_LABEL, RELATION_LABEL, fmtDate, fmtNumber } from '../labels';
 import PopulationSection from '../components/PopulationSection';
 import EntriesSection from '../components/EntriesSection';
@@ -150,7 +150,12 @@ function Overview({ v }: { v: Village }) {
               {v.aliases.map((a) => (
                 <li key={`${a.type}-${a.value}`}>
                   <b>{a.value}</b> <span className="muted">— {NAME_TYPE_LABEL[a.type]}</span>
-                  {a.source && <span className="muted"> · المصدر: {a.source}</span>}
+                  {a.source && (
+                    <span className="muted">
+                      {' '}
+                      · المصدر: <SourceText text={a.source} />
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

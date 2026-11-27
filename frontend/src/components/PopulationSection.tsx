@@ -3,7 +3,7 @@ import { population } from '../api/endpoints';
 import type { Page, PopulationRecord } from '../api/types';
 import { useAuth } from '../auth';
 import { fmtNumber } from '../labels';
-import { Empty, ErrorBox, Field, Loading, StatusBadge, useAction } from './ui';
+import { Empty, ErrorBox, Field, Loading, SourceText, StatusBadge, useAction } from './ui';
 
 interface Draft {
   year: string;
@@ -95,8 +95,8 @@ export default function PopulationSection({ villageId }: { villageId: number }) 
                   </div>
                   {fmtNumber(r.population)}
                 </td>
-                <td>
-                  {r.source}
+                <td className="source-cell">
+                  <SourceText text={r.source} />
                   {r.notes && <small className="muted d-block">{r.notes}</small>}
                 </td>
                 <td>
